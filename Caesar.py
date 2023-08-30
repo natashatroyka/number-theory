@@ -43,7 +43,7 @@ def numbers_to_letters(numstring):
 # I'm not sure how to actually use this, since I needed to use numbers as strings
 # in order to say that a is 00 rather than just 0. But then I don't know how to
 # do arithmetic. But I won't delete this, since it was part of the process
-# of figuring it out. Here is another attempt.
+# of figuring it out. Here is another attempt that worked better.
 
 # Given a letter, this dictionary tells us the corresponding number
 alphabet_dictionary = {}
@@ -58,6 +58,8 @@ for key in alphabet_dictionary:
     value = alphabet_dictionary[key]
     reverse_alphabet_dictionary[value] = key
 
+# This defines a function which performs a shift for us. It can be used
+# either to convert plaintext to ciphertext or vice versa.
 def shift_by_n(input, n):
     input.lower()
     output = ''
@@ -70,6 +72,9 @@ def shift_by_n(input, n):
     print(output)
     return output
 
+# This is how I solved the cipher of unknown shift. Those with more
+# patience than I have may benefit from looking for patterns,
+# instead of my brute force approach.
 for i in range(26):
-    print(i)
     shift_by_n('eduyiademdqiqkdyj',i)
+        
